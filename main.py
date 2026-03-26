@@ -89,7 +89,7 @@ while True:
                         log10(float(n1))
                     case '10':
                         n1 = input ('Insira o número: ')
-                        fat(float(n1))
+                        fat(int(n1))
                     case '11':
                         n1 = input ('Insira o número: ')
                         exp(float(n1))  
