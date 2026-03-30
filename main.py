@@ -1,10 +1,14 @@
-import soma, sub, mult, div, pow, raiz, raizCub, cos, sen ,tan, log, logBase, log10, fat, exp, velMedia, acel, forca, enerCin, drag
+from modules.operacoes import soma, sub, mult, div
+from modules.cientifica import pow, raiz, raizCub, cos, sen ,tan, log, logBase, log10, fat, exp 
+from modules.fisica import velMedia, acel, forca, enerCin, drag 
+from modules.conversoes import kmhToMs, msToKmh, grausRad, radGraus, rpmRad, metroKm, kmMetro, segMin, minSeg, nToKn, knToN, jToKj, kjToJ 
 
 while True:
     print ('SELECIONE QUE TIPO DE CALCULO DESEJA REALIZAR:')
     print ('1 - Básicos')
     print ('2 - Científicos')
     print ('3 - Físicos')
+    print ('4 - Conversões')
     print ('0 - Sair')
     escolha = input('Insira sua escolha: ')
 
@@ -136,6 +140,37 @@ while True:
                         break
                     case _:
                         print('Escolha uma opção válida!')
+        case '4':
+            print ('SELECIONE UMA OPÇÃO:')
+            print ('1 - Velocidade')
+            print ('2 - Ângulo')
+            print ('3 - Rotação')
+            print ('4 - Distância')
+            print ('5 - Tempo')
+            print ('6 - Força')
+            print ('7 - Energia')
+            print ('0 - Voltar')
+            escolhaConv = input('Insira sua escolha: ') 
+
+            match escolhaConv:
+                case '1':
+                    print ('SELECIONE UMA OPÇÃO:')
+                    print ('1 - Km/h para m/s')
+                    print ('2 - m/s para Km/h')
+                    print ('0 - Voltar')
+                    escolhaVel = input('Insira sua escolha: ')
+
+                    match escolhaVel:    
+                        case '1': 
+                            vel = input('Insira a velocidade: ')
+                            kmhToMs(float(vel))
+                        case '2':
+                            vel = input('Insira a velocidade: ')
+                            msToKmh(float(vel))
+                        case '0':
+                            break
+                        case _ :
+                            print('Insira uma escolha válida!')
         case '0':
             print('Encerrando sistema...')
             break
