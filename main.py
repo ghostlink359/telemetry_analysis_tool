@@ -1,9 +1,10 @@
-from modules.operacoes import soma, sub, mult, div
-from modules.cientifica import pow, raiz, raizCub, cos, sen ,tan, log, logBase, log10, fat, exp 
-from modules.fisica import velMedia, acel, forca, enerCin, drag 
-from modules.conversoes import kmhToMs, msToKmh, grausRad, radGraus, rpmRad, metroKm, kmMetro, segMin, minSeg, nToKn, knToN, jToKj, kjToJ 
+from core.math_ops import mult, div, pow, raiz, raizCub,tan, fat, exp 
+from core.physics import velMedia, acel, forca, enerCin, drag 
+from core.conversions import kmhToMs, msToKmh, grausRad, radGraus, rpmRad, metroKm, kmMetro, segMin, minSeg, nToKn, knToN, jToKj, kjToJ 
 
 while True:
+    print('=== CALCULADORA DE TELEMETRIA ===')
+
     print ('SELECIONE QUE TIPO DE CALCULO DESEJA REALIZAR:')
     print ('1 - Básicos')
     print ('2 - Científicos')
@@ -15,11 +16,11 @@ while True:
     match escolha:
         case '1':
             while True:
+                print('=== CALCULDOS BÁSICOS ===')
+                
                 print ('SELECIONE UMA OPÇÃO:')
-                print ('1 - Adição')
-                print ('2 - Subtração')
-                print ('3 - Multiplicação')
-                print ('4 - Divisão')
+                print ('1 - Multiplicação')
+                print ('2 - Divisão')
                 print ('0 - Voltar')
                 subEscolha = input('Insira sua escolha: ')  
 
@@ -27,16 +28,8 @@ while True:
                     case '1':
                         n1 = input ('Insira o primeiro número: ')
                         n2 = input('Insira o segundo número: ')
-                        soma(float(n1), float(n2))
-                    case '2':
-                        n1 = input ('Insira o primeiro número: ')
-                        n2 = input('Insira o segundo número: ')
-                        sub(float(n1), float(n2))
-                    case '3':
-                        n1 = input ('Insira o primeiro número: ')
-                        n2 = input('Insira o segundo número: ')
                         mult(float(n1), float(n2))
-                    case '4':
+                    case '2':
                         n1 = input ('Insira o primeiro número: ')
                         n2 = input('Insira o segundo número: ')
                         div(float(n1), float(n2)) 
@@ -46,18 +39,15 @@ while True:
                         print ('Escolha uma opção valida!')
         case '2':
             while True:
+                print('=== CALCULOS CIENTÍFICOS ===')
+
                 print ('SELECIONE UMA OPÇÃO:')
                 print ('1 - Potência')
                 print ('2 - Raiz Quadrada')
                 print ('3 - Raiz Cúbica')
-                print ('4 - Seno')
-                print ('5 - Cosseno')
-                print ('6 - Tangente')
-                print ('7 - Log Natural')
-                print ('8 - Log Base')
-                print ('9 - Log10')
-                print ('10 - Fat')
-                print ('11 - Exponencial')
+                print ('4 - Tangente')
+                print ('5 - Fat')
+                print ('6 - Exponencial')
                 print ('0 - Voltar')
                 escolhaCient = input('Insira sua escolha: ') 
 
@@ -74,27 +64,11 @@ while True:
                         raizCub(float(n1))
                     case '4':
                         n1 = input ('Insira o número: ')
-                        sen(float(n1))
+                        tan(float(n1))
                     case '5':
                         n1 = input ('Insira o número: ')
-                        cos(float(n1))
-                    case '6':
-                        n1 = input ('Insira o número: ')
-                        tan(float(n1))
-                    case '7':
-                        n1 = input ('Insira o número: ')
-                        log(float(n1)) 
-                    case '8':
-                        n1 = input ('Insira a base: ')
-                        n2 = input ('Insira o log: ')
-                        logBase(float(n1), float(n2)) 
-                    case '9':
-                        n1 = input ('Insira o número: ')
-                        log10(float(n1))
-                    case '10':
-                        n1 = input ('Insira o número: ')
                         fat(int(n1))
-                    case '11':
+                    case '6':
                         n1 = input ('Insira o número: ')
                         exp(float(n1))  
                     case '0':
@@ -103,6 +77,8 @@ while True:
                         print ('Escolha uma opção valida!')
         case '3':
             while True:
+                print('=== CALCULADORA FÍSICOS ===')
+
                 print ('SELECIONE UMA OPÇÃO:')
                 print ('1 - Velocidade Média')
                 print ('2 - Aceleração')
@@ -141,6 +117,8 @@ while True:
                     case _:
                         print('Escolha uma opção válida!')
         case '4':
+            print('=== CONVERSÕES ===')
+
             print ('SELECIONE UMA OPÇÃO:')
             print ('1 - Velocidade')
             print ('2 - Ângulo')
@@ -157,6 +135,8 @@ while True:
                     print ('SELECIONE UMA OPÇÃO:')
                     print ('1 - Km/h para m/s')
                     print ('2 - m/s para Km/h')
+                    print ('3 - Graus para Rad')
+                    print ('4 - Rad para Graus')
                     print ('0 - Voltar')
                     escolhaVel = input('Insira sua escolha: ')
 
