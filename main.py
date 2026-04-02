@@ -16,7 +16,7 @@ while True:
     match escolha:
         case '1':
             while True:
-                print('=== CALCULDOS BÁSICOS ===')
+                print('=== CALCULOS BÁSICOS ===')
                 
                 print ('SELECIONE UMA OPÇÃO:')
                 print ('1 - Multiplicação')
@@ -133,10 +133,10 @@ while True:
             match escolhaConv:
                 case '1':
                     print ('SELECIONE UMA OPÇÃO:')
-                    print ('1 - Km/h para m/s')
-                    print ('2 - m/s para Km/h')
-                    print ('3 - Graus para Rad')
-                    print ('4 - Rad para Graus')
+                    print ('1 - Velocidade')
+                    print ('2 - Ângulo')
+                    print ('3 - Rotação')
+                    print ('4 - Energia')
                     print ('0 - Voltar')
                     escolhaVel = input('Insira sua escolha: ')
 
