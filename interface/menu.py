@@ -1,8 +1,27 @@
 from core.physics import velMedia, acel, forca, enerCin, drag 
-from core.conversions import kmhToMs, msToKmh, grausRad, radGraus, rpmRad 
+from core.conversions import kmhToMs, msToKmh, grausRad, radGraus, rpmRad, radRpm
 
 def telemetryMenu(n):
-    print('teste')
+    while True:
+        print('=== TELEMETRIA ===')
+
+        print ('SELECIONE UMA OPÇÃO:')
+        print ('1 - Inserir Dados')
+        print ('2 - Análise Básica')
+        print ('3 - Detectar Eventos')
+        print ('4 - Comparar Voltas')
+        print ('5 - Gráfico')
+        print ('0 - Voltar')
+        escolhaTele = input('Insira sua escolha: ')
+
+        match escolhaTele:
+            case '1':
+                print('teste')
+            case '0':
+                break
+            case _:
+                print('Insira uma opção válida!')
+                
 
 def menuPhys(n):
     while True:
@@ -51,7 +70,7 @@ def menuPhys(n):
             case _:
                 print('Escolha uma opção válida!')
 
-def menuConv(n):
+def menuTools(n):
     while True:
         print('=== CONVERSÕES ===')
 
@@ -64,22 +83,10 @@ def menuConv(n):
 
         match escolhaConv:
             case '1':
-                print ('SELECIONE UMA OPÇÃO:')
-                print ('1 - Velocidade')
-                print ('2 - Ângulo')
-                print ('3 - Rotação')
-                print ('4 - Energia')
-                print ('0 - Voltar')
-                escolhaVel = input('Insira sua escolha: ')
+                vel = input('Insira a velocidade: ')
+                result = kmhToMs(float(vel))
+            case '0':
+                break
+            case _ :
+                print('Insira uma escolha válida!')
 
-                match escolhaVel:    
-                    case '1': 
-                        vel = input('Insira a velocidade: ')
-                        kmhToMs(float(vel))
-                    case '2':
-                        vel = input('Insira a velocidade: ')
-                        msToKmh(float(vel))
-                    case '0':
-                        break
-                    case _ :
-                        print('Insira uma escolha válida!')

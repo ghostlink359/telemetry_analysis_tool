@@ -1,4 +1,4 @@
-from interface.menu import telemetryMenu, menuPhys, menuConv
+from interface.menu import telemetryMenu, menuPhys, menuTools
 
 while True:
     print('=== CALCULADORA DE TELEMETRIA ===')
@@ -16,7 +16,7 @@ while True:
         case '2':
             menuPhys()
         case '3':
-            menuConv()
+            menuTools()
         case '0':
             print('Encerrando sistema...')
             break

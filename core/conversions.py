@@ -15,5 +15,5 @@ def radGraus(n):
 def rpmRad(rpm):
     return rpm * (2 * math.pi / 60)
 
-def rpmRad(rad):
+def radRpm(rad):
     return rad * (60 / 2 * math.pi)
