@@ -29,3 +29,6 @@ def fat(n1):
 
 def exp(n1):
     return math.exp(n1)
+
+def media(list):
+    return sum(list) / len(list)
