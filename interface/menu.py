@@ -1,29 +1,45 @@
+from core.math_ops import media
 from core.physics import velMedia, acel, forca, enerCin, drag 
-from core.conversions import kmhToMs, msToKmh, grausRad, radGraus, rpmRad, radRpm
+from core.conversions import kmhToMs, grausRad, rpmRad
+from interface.input_handler import ler_lista
+import matplotlib.pyplot as plt
 
-def telemetryMenu(n):
+def telemetryMenu():
     while True:
         print('=== TELEMETRIA ===')
 
         print ('SELECIONE UMA OPÇÃO:')
         print ('1 - Inserir Dados')
         print ('2 - Análise Básica')
-        print ('3 - Detectar Eventos')
-        print ('4 - Comparar Voltas')
-        print ('5 - Gráfico')
+        print ('3 - Comparar Voltas')
+        print ('4 - Gráfico')
         print ('0 - Voltar')
         escolhaTele = input('Insira sua escolha: ')
 
         match escolhaTele:
             case '1':
-                print('teste')
+                list1 = ler_lista('Insira os valores separados por vírgula: ')
+            case '2':
+                result = media(list1)
+                print('A média de velocidade é: ', result)
+                result = max(list1)
+                print('A velocidade máxima foi de: ', result)
+                result = min(list1)
+                print('A menor velocidade foi de: ', result)
+            case '3':
+                list2 = ler_lista('Insira os valores da segunda lista separados por vírgula: ')
+                dif = list(set(list1) - set(list2))
+                print(dif)
+            case '4':
+                plt.plot(list1)
+                plt.show()
             case '0':
                 break
             case _:
                 print('Insira uma opção válida!')
                 
 
-def menuPhys(n):
+def menuPhys():
     while True:
         print('=== CALCULADORA FÍSICOS ===')
 
@@ -70,14 +86,14 @@ def menuPhys(n):
             case _:
                 print('Escolha uma opção válida!')
 
-def menuTools(n):
+def menuTools():
     while True:
         print('=== CONVERSÕES ===')
 
         print ('SELECIONE UMA OPÇÃO:')
-        print ('1 - Velocidade')
-        print ('2 - Ângulo')
-        print ('3 - Rotação')
+        print ('1 - Velocidade (km/h -> m/s)')
+        print ('2 - Ângulo (graus -> rad)')
+        print ('3 - Rotação (rpm -< rad/s)')
         print ('0 - Voltar')
         escolhaConv = input('Insira sua escolha: ') 
 
@@ -85,6 +101,15 @@ def menuTools(n):
             case '1':
                 vel = input('Insira a velocidade: ')
                 result = kmhToMs(float(vel))
+                print('Resultado: ', result)
+            case '2':
+                ang = input('Insira o ângulo: ')
+                result = grausRad(float(ang))
+                print('Resultado: ', result)
+            case '3':
+                rpm = input('Insira o RPM: ')
+                result = rpmRad(float(rpm))
+                print('Resultado: ', result)
             case '0':
                 break
             case _ :
