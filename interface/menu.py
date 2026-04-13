@@ -18,8 +18,11 @@ def telemetryMenu():
 
         match escolhaTele:
             case '1':
-                list1 = ler_lista('Insira os valores separados por vírgula: ')
+                list1 = ler_lista('Insira velocidades (km/h) separadas por vírgula:: ')
             case '2':
+                if list1 is None:
+                    print("Insira dados primeiro!")
+                    continue
                 result = media(list1)
                 print('A média de velocidade é: ', result)
                 result = max(list1)
@@ -27,17 +30,20 @@ def telemetryMenu():
                 result = min(list1)
                 print('A menor velocidade foi de: ', result)
             case '3':
-                list2 = ler_lista('Insira os valores da segunda lista separados por vírgula: ')
-                dif = list(set(list1) - set(list2))
-                print(dif)
+                list2 = ler_lista('Insira velocidades (km/h) separadas por vírgula:: ')
+                for i in range(min(len(list1), len(list2))):
+                    print(f"Ponto {i}: {list1[i] - list2[i]}")
             case '4':
                 plt.plot(list1)
+                plt.title("Velocidade x Tempo")
+                plt.xlabel("Tempo")
+                plt.ylabel("Velocidade (km/h)")
+                plt.grid()
                 plt.show()
             case '0':
                 break
             case _:
-                print('Insira uma opção válida!')
-                
+                print('Insira uma opção válida!')               
 
 def menuPhys():
     while True:
