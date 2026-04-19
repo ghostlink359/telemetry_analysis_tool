@@ -1,14 +1,14 @@
 from interface.menu import telemetryMenu, menuPhys, menuTools
 
 while True:
-    print('=== CALCULADORA DE TELEMETRIA ===')
+    print('=== TELEMETRY SYSTEM ===')
 
-    print ('SELECIONE UMA OPÇÃO:')
-    print ('1 - Telemetria')
-    print ('2 - Física Aplicada')
-    print ('3 - Ferramentas')
-    print ('0 - Sair')
-    escolha = input('Insira sua escolha: ')
+    print ('Choose an Option:')
+    print ('1 - Telemetry')
+    print ('2 - Physics')
+    print ('3 - Tools')
+    print ('0 - Leave')
+    escolha = input('Choose your option: ')
 
     match escolha:
         case '1':
@@ -18,7 +18,7 @@ while True:
         case '3':
             menuTools()
         case '0':
-            print('Encerrando sistema...')
+            print('Leaving the System...')
             break
         case _:
-            print ('Escolha uma opção valida!')
+            print ('Choose a valid option!')

@@ -4,4 +4,4 @@ def ler_lista(msg):
             entrada = input(msg)
             return list(map(float, entrada.split(',')))
         except:
-            print("Formato inválido! Use: 10,20,30")
+            print("Invalid Format! Use: 10,20,30")
