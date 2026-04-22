@@ -1,5 +1,9 @@
 from interface.menu import telemetryMenu, menuPhys, menuTools
 
+import pandas as pd
+
+df = pd.read_csv('formulaOneLaps.csv')
+
 while True:
     print('=== TELEMETRY SYSTEM ===')
 
@@ -17,6 +21,8 @@ while True:
             menuPhys()
         case '3':
             menuTools()
+        case '4':
+            print(df.head())
         case '0':
             print('Leaving the System...')
             break
