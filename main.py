@@ -2,7 +2,7 @@ from interface.menu import telemetryMenu, menuPhys, menuTools
 
 import pandas as pd
 
-df = pd.read_csv('formulaOneLaps.csv')
+df = pd.read_csv(r'C:\Users\908430\Desktop\calculadoraCient\telemetry_calc\files\formulaOneLaps.csv')
 
 while True:
     print('=== TELEMETRY SYSTEM ===')
@@ -11,6 +11,7 @@ while True:
     print ('1 - Telemetry')
     print ('2 - Physics')
     print ('3 - Tools')
+    print ("4 - Teste Planilha")
     print ('0 - Leave')
     escolha = input('Choose your option: ')
 
