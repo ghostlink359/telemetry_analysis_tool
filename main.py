@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv(r'C:\Users\908430\Desktop\calculadoraCient\telemetry_calc\files\formulaOneLaps.csv')
+df = pd.read_csv(r'files\formulaOneLaps.csv')
 
 while True:
     print('=== TELEMETRY SYSTEM ===')
