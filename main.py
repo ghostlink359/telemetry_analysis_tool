@@ -23,7 +23,7 @@ while True:
         case '3':
             menuTools()
         case '4':
-            print(df.head())
+            print(df.head(25))
         case '0':
             print('Leaving the System...')
             break
