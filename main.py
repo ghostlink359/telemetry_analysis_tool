@@ -1,7 +1,7 @@
 import pandas as pd
 
 df = pd.read_csv(r'files\formulaOneLaps.csv')
-
+        
 while True:
     print('=== TELEMETRY SYSTEM ===')
 
